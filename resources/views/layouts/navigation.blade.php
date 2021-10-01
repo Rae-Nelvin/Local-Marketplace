@@ -12,7 +12,7 @@
 
                 <!-- Navigation Links -->
                 <div class="space-x-4 md:space-x-8 flex w-full py-4 px-1 md:p-0">
-                    <div class="bg-white shadow-xl p-2 md:p-4 md:ml-4 flex w-full rounded md:rounded-none">
+                    <div class="bg-white shadow-md p-2 md:p-4 md:ml-4 flex w-full rounded md:rounded-none">
                         <span class="w-auto flex justify-end items-center text-gray-500 p-2">
                             <i class="fas fa-search"></i>
                         </span>
