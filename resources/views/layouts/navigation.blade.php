@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="md:bg-white bg-red-400 border-b border-gray-100">
+<nav x-data="{ open: false }" class="md:bg-white bg-red-400 border-b border-gray-100 shadow-md">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:py-2">
         <div class="flex justify-between h-16 ">
@@ -59,29 +59,19 @@
 
                     <x-slot name="content">
                         <!-- Authentication -->
-                            <x-dropdown-link :href="route('dashboard')" onclick="event.preventDefault();
-                                                this.closest('form').submit();" class="flex">
+                            <x-dropdown-link :href="route('settings')" class="flex">
                                 <img src="https://pixahive.com/wp-content/uploads/2020/10/Gym-shoes-153180-pixahive.jpg" class="rounded-full w-12 h-12" alt="Profile Picture" /><p class="mt-4 ml-4">{{ Auth::user()->name }}</p>
                             </x-dropdown-link>
-                            <x-dropdown-link :href="route('dashboard')" onclick="event.preventDefault();
-                                                this.closest('form').submit();" class="flex">
+                            <x-dropdown-link :href="route('dashboard')" >
                                 Point Toko : 
                             </x-dropdown-link>
-                            <x-dropdown-link :href="route('dashboard')" onclick="event.preventDefault();
-                                                this.closest('form').submit();">
+                            <x-dropdown-link :href="route('dashboard')" >
                                 Transaksi
                             </x-dropdown-link>
-                            <x-dropdown-link :href="route('dashboard')" onclick="event.preventDefault();
-                                                this.closest('form').submit();">
+                            <x-dropdown-link :href="route('settings')" >
                                 Settings
                             </x-dropdown-link>
-                            <x-dropdown-link :href="route('dashboard')" onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                Aktivasi
-                            </x-dropdown-link>
-                            <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
-                                                this.closest('form').submit();">
+                            <x-dropdown-link :href="route('logout')">
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
                     </x-slot>

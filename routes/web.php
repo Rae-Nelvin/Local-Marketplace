@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,7 @@ Route::get('/', function() {
 Route::group(['middleware' => ['auth']], function(){
     
     Route::get('/dashboard', [MainController::class, 'index'])->name('dashboard');
+    Route::get('/settings', [MainController::class, 'settings'])->name('settings');
 
 });
 
