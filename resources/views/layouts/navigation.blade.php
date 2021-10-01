@@ -27,15 +27,18 @@
                     <x-nav-link :href="route('dashboard')">
                         <i class="fas fa-bell text-xl text-white md:text-gray-600"></i>
                     </x-nav-link>
+                    @if (Auth::user())
                     <x-nav-link :href="route('dashboard')">
                         <i class="fas fa-user-alt text-xl text-white md:hidden"></i>
                     </x-nav-link>
+                    @else
                     <button class="border-2 border-red-400 px-4 my-4 text-red-400 hover:text-white hover:bg-red-700 hover:border-red-700 rounded transition-all hidden md:flex">
                         Daftar
                     </button>
                     <button class="items-center shadow bg-red-400 px-4 my-4 rounded text-white hover:bg-red-700 transition-all hidden md:flex">
                         Masuk
                     </button>
+                    @endif
                 </div>
             </div>
             @if (Auth::user())
@@ -44,7 +47,7 @@
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                            <div>{{ Auth::user()->name }}</div>
+                            <div><i class="fas fa-user-alt text-xl text-white md:text-gray-600"></i></div>
 
                             <div class="ml-1">
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -56,15 +59,31 @@
 
                     <x-slot name="content">
                         <!-- Authentication -->
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-
+                            <x-dropdown-link :href="route('dashboard')" onclick="event.preventDefault();
+                                                this.closest('form').submit();" class="flex">
+                                <img src="https://pixahive.com/wp-content/uploads/2020/10/Gym-shoes-153180-pixahive.jpg" class="rounded-full w-12 h-12" alt="Profile Picture" /><p class="mt-4 ml-4">{{ Auth::user()->name }}</p>
+                            </x-dropdown-link>
+                            <x-dropdown-link :href="route('dashboard')" onclick="event.preventDefault();
+                                                this.closest('form').submit();" class="flex">
+                                Point Toko : 
+                            </x-dropdown-link>
+                            <x-dropdown-link :href="route('dashboard')" onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                Transaksi
+                            </x-dropdown-link>
+                            <x-dropdown-link :href="route('dashboard')" onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                Settings
+                            </x-dropdown-link>
+                            <x-dropdown-link :href="route('dashboard')" onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                Aktivasi
+                            </x-dropdown-link>
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
-                        </form>
                     </x-slot>
                 </x-dropdown>
             </div>
@@ -90,27 +109,5 @@
             </x-responsive-nav-link>
         </div> -->
 
-        @if (Auth::user())
-        <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-200">
-            <div class="px-4">
-                <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
-            </div>
-
-            <div class="mt-3 space-y-1">
-                <!-- Authentication -->
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-
-                    <x-responsive-nav-link :href="route('logout')"
-                            onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                        {{ __('Log Out') }}
-                    </x-responsive-nav-link>
-                </form>
-            </div>
-        </div>
-        @endif
     </div>
 </nav>
