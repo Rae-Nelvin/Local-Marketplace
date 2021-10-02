@@ -16,14 +16,4 @@ class MainController extends Controller
             return view('user.dashboard');
         }
     }
-
-    public function settings()
-    {
-        if(Auth::user()->hasRole('admin')){
-            return view('admin.settings');
-        }else if(Auth::user()->hasRole('user')){
-            return view('user.settings');
-        }
-    }
-
 }

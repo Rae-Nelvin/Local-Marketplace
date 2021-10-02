@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="my-8 ml-8 mr-4 flex">
         <!-- Start of Sidebar -->
-        <div class="w-1/5 min-w-[340px] bg-white shadow-md rounded-lg p-2 mx-2 my-3 border-2">
+        <div class="w-1/5 bg-white shadow-md rounded-lg p-2 mx-2 my-3 border-2">
             <div class="flex my-2 ml-4">
             <img src="https://pixahive.com/wp-content/uploads/2020/10/Gym-shoes-153180-pixahive.jpg" class="rounded-full w-12 h-12" alt="Profile Picture" /><p class="mt-4 ml-4 font-bold">{{ Auth::user()->name }}</p>
             </div>
@@ -25,7 +25,7 @@
             </div>
         </div>
         <!-- End of Sidebar -->
-        <div class="w-4/5 bg-white p-2 mx-2 my-3">
+        <div class="w-4/5 min-w-[340px] bg-white p-2 mx-2 my-3">
             <div class="flex space-x-2">
                 <i class="far fa-user mt-1 text-gray-400"></i>
                 <p class="font-semi-bold text-gray-400">{{ Auth::user()->name }}</p>

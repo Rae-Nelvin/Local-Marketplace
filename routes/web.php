@@ -25,8 +25,13 @@ Route::get('/', function() {
 // Auth Route for Both
 Route::group(['middleware' => ['auth']], function(){
     
-    Route::get('/dashboard', [MainController::class, 'index'])->name('dashboard');
-    Route::get('/settings', [MainController::class, 'settings'])->name('settings');
+    Route::get('/', [MainController::class, 'index'])->name('dashboard');
+
+    Route::group(['prefix' => 'user'], function(){
+        Route::get('/settings', [UserController::class, 'settings'])->name('settings');
+        Route::get('/search', [UserController::class, 'search'])->name('search');
+        Route::get('/cart', [UserController::class, 'cart'])->name('cart');
+    });
 
 });
 

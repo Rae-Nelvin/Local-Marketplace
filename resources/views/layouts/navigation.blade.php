@@ -21,7 +21,7 @@
                             <i class="fas fa-search"></i>
                         </button>
                     </div>
-                    <x-nav-link :href="route('dashboard')">
+                    <x-nav-link :href="route('cart')">
                         <i class="fas fa-shopping-cart text-xl text-white md:text-gray-600"></i>
                     </x-nav-link>
                     <x-nav-link :href="route('dashboard')">

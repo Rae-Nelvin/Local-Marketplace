@@ -11,4 +11,14 @@ class UserController extends Controller
         return view('user.settings');
     }
 
+    public function search()
+    {
+        return view('user.search');
+    }
+
+    public function cart()
+    {
+        return view('user.cart');
+    }
+
 }
