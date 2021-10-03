@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="my-8 ml-8 mr-4 flex">
         <!-- Start of Sidebar -->
-        <div class="w-1/5 min-w-[340px] bg-white shadow-md rounded-lg p-2 mx-2 my-3 border-2">
+        <div class="w-1/5 min-w-[340px] bg-white shadow-md rounded-lg p-2 mx-2 my-3 border-2 hidden md:block">
             <h1 class="text-sm font-bold my-2 mx-6">Filter</h1>
             <div class="border-t-2"></div>
             <div class="space-y-2 mx-4">
@@ -11,16 +11,16 @@
         </div>
         <!-- End of Sidebar -->
         <!-- Start of Main Content -->
-        <div class="w-4/5 bg-white p-2 mx-2 my-3">
+        <div class="md:w-4/5 bg-white p-2 w-full md:mx-2 my-3">
             <div class="flex space-x-2 border-b-2">
                 <i class="fas fa-box text-xl text-red-400"></i>
                 <h1 class="text-xl mt-px text-red-400">Products</h1>
             </div>
             <div class="flex justify-between my-2">
-                <p class="text-xs mt-2">Menampilkan 1 - 60 barang dari total 136rb+ untuk "topi hitam"</p>
+                <p class="text-xs mt-2 text-gray-400">Menampilkan 1 - 60 barang dari total 136rb+ untuk "topi hitam"</p>
                 <div class="flex space-x-1">
-                    <h1 class="font-bold text-xs mt-2">Urutkan :</h1>
-                    <div @click.away="open = false" class="relative border-2 rounded-lg" x-data="{ open: false }">
+                    <h1 class="font-bold text-xs mt-2 hidden md:block">Urutkan :</h1>
+                    <div @click.away="open = false" class="relative border-2 rounded-lg " x-data="{ open: false }">
                         <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-1 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:block hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
                         <span class="text-xs">Paling Sesuai</span>
                         <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
@@ -37,7 +37,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-white rounded-lg p-2 my-3 border-2 grid grid-cols-5">
+            <div class="bg-white rounded-lg p-2 my-3 border-2 grid grid-cols-3 gap-0 md:grid-cols-5">
                 <div class="relative max-w-sm min-w-[340px] bg-white shadow-md rounded-3xl p-2 mx-2 my-3 cursor-pointer transform hover:scale-110 transition-all">
                     <div class="overflow-x-hidden rounded-2xl relative">
                         <img class="h-40 rounded-2xl w-full object-cover hover:opacity-90 transition-all " src="https://pixahive.com/wp-content/uploads/2020/10/Gym-shoes-153180-pixahive.jpg">
