@@ -15,8 +15,8 @@ class AdminSeeder extends Seeder
     public function run()
     {
         $user = \App\Models\User::create([
-            'name'=> 'Admin 1',
-            'email'=> 'admin1@admin.com',
+            'name'=> 'Admin 2',
+            'email'=> 'admin2@admin.com',
             'password' => Hash::make('Password'),
         ]);
         $user->attachRole('admin');

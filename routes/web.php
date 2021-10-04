@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\UserController;
@@ -31,6 +32,10 @@ Route::group(['middleware' => ['auth']], function(){
         Route::get('/settings', [UserController::class, 'settings'])->name('settings');
         Route::get('/search', [UserController::class, 'search'])->name('search');
         Route::get('/cart', [UserController::class, 'cart'])->name('cart');
+    });
+
+    Route::group(['prefix' => 'admin'],function() {
+        Route::get('/products', [AdminController::class, 'products'])->name('products');
     });
 
 });
