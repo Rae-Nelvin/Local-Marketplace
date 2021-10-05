@@ -36,6 +36,7 @@ Route::group(['middleware' => ['auth']], function(){
 
     Route::group(['prefix' => 'admin'],function() {
         Route::get('/products', [AdminController::class, 'products'])->name('products');
+        Route::get('/transactions', [AdminController::class, 'transactions'])->name('transactions');
     });
 
 });
